@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gérer les recettes{% endblock %}
+
+{% block body %}
+    <div class="mt-4 admin-home">
+        {{ include('recipe/_searchRecipes.html.twig') }}
+        <div class="container">
+            <h1 class="text-center">Gérer les recettes</h1>
+            {% for message in app.flashes('success') %}
+                <div class="alert alert-success">
+                    {{ message }}
+                </div>
+            {% endfor %}
+            <p class="text-center">
+                <a href="{{ path('admin.recipe.new')}}" class="btn">Ajouter une recette</a>
+            </p>
+            {% if not recipes.items %}
+                <p class="text-center mt-4">Il n'y a pas de recette qui correspond à votre recherche</p>
+            {% else %}
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Recettes</th>
+                            <th class="text-center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for recipe in recipes %}
+                            <tr>
+                                <td><a class="link-recipe-admin" href="{{ path('recipe_show', {'id': recipe.id}) }}">{{ recipe.name }}</a></td>
+                                <td class="text-center">
+                                    <a href="{{ path('admin.recipe.edit', {id: recipe.id}) }}" class="btn m-1">Editer</a>
+                                    <form class="delete-button" method="post" action="{{ path('admin.recipe.delete', {id: recipe.id}) }}" style="display: inline-block" onsubmit="return confirm('Êtes vous vraiment sûr?')">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ recipe.id) }}">
+                                        <button class="btn btn-delete">Supprimer</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <div class="pagination d-flex justify-content-center">
+                    {{ knp_pagination_render(recipes) }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,104 @@
+@media all and (max-width: 1199px) {
+   #recipe_steps textarea {
+      width: 800px;
+   }
+}
+
+@media all and (max-width: 991px) {
+   .block-ingredients {
+      flex-wrap: wrap;
+      width:  270px;
+      float: none;
+      margin: auto;
+   }
+
+   #recipe_recipeIngredients .fa-times-circle {
+      float: none;
+      line-height: normal;
+   }
+
+   #recipe_steps textarea {
+      width: 580px;
+   }
+
+   #navbarColor01 {
+      text-align: center;
+   }
+}
+
+@media all and (max-width: 799px) {
+   #search-recipe #nameRecipe, #search-recipe #ingredient, #search-recipe #nameCategory {
+      font-size: 7px;
+   }
+
+   .button-search button {
+      font-size: 7px;
+      height: 24.5px;
+      display: block;
+   }
+}
+
+@media all and (max-width: 767px) {
+   #recipe_steps textarea {
+      width: 235px;
+   }
+}
+
+@media all and (max-width: 430px) {
+   .block-recipe-list {
+      max-width: 250px;
+   }
+
+   .miniature-img {
+      width: 100%;
+      height: auto;
+   }
+
+   #footer-recipe {
+      display: flex;
+      flex-direction: column-reverse;
+      height: auto;
+   }
+
+   .foot-left {
+      margin: auto;
+   }
+
+   .foot-right {
+      margin: auto;
+   }
+
+   .login, .registration, .admin-home, .role-user, .edit-user, .error-page, .category, .show-page {
+      min-height: calc(100vh - 233px); 
+   }
+
+   .login form, .registration form {
+      width: 250px;
+   }
+
+   #recipe_steps textarea {
+      width: 180px;
+   }
+
+   #nameRecipe::placeholder, #ingredient::placeholder {
+      font-size: 0.5em;
+   }
+
+   #search-recipe {
+      margin: auto;
+      width: 300px;
+   }
+
+   #search-recipe .button-search {
+      width: 100%;
+   }
+
+   .button-search button {
+      margin: auto;
+   }
+
+   #search-recipe select { 
+      width: 110px !important;
+      font-size: 7px !important;
+   } 
+}

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes {{ name }}{% endblock %}
+
+{% block body %}
+   <div class="container category mt-4">
+      {% if not recipes.items %}
+         <p class="text-center">Il n'y a pas de recette qui correspond à votre recherche</p>
+      {% else %}
+         <h1 class="text-center">Les {{ name }}</h1> 
+         {{ include('recipe/_listRecipes.html.twig') }}
+         <div class="pagination d-flex justify-content-center">
+            {{ knp_pagination_render(recipes) }}
+         </div>
+      {% endif %}
+   </div>
+{% endblock %}

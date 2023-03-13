@@ -1,0 +1,26 @@
+.navbar {
+   background-color: $navColor;
+   font-weight: 700;
+   color: $textNavbar;
+
+   .nav-item:hover {
+      color: $textNavbarHover !important;
+   }
+
+   .navbar-brand {
+      text-transform: uppercase;
+      font-size: 16px;
+
+      &:hover {
+         opacity: 0.6;
+      }
+   }
+
+   .nav-link.active {
+      color: $colorTextNavActive !important;
+   }
+
+   li {
+      line-height: 34px;
+   }
+}

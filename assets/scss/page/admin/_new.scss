@@ -1,0 +1,97 @@
+.link-recipe-admin, .link-recipe-admin:hover {
+    color: black;
+}
+
+.title-adding-recipe {
+    margin-bottom: 0;
+    line-height: 38px;
+    color: white;
+    margin-left: 2px;
+}
+
+#recipe_recipeIngredients {
+    max-width: 825px; 
+    margin: auto;
+    text-align: center;
+
+    .fa-times-circle {
+        float: right;
+        line-height: 100px;
+    }
+
+    input {
+        margin-right: 10px;
+    }
+}
+
+.admin-add-title {
+    margin-left: 0px !important;
+    display: flex;
+    background-color: #EB6864;
+}
+
+#add_ingredient, #add_step {
+    margin-left: auto;
+    box-shadow: none;
+}
+
+.admin-step {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#recipe_steps textarea {
+    min-height: 120px;
+    width: 1000px;
+}
+
+.btn-add-recipe {
+    display: flex;
+}
+
+.btn-add-recipe .btn {
+    margin: auto;
+}
+
+.fa-times-circle {
+    font-size: 25px;
+    color: red;
+    cursor: pointer;
+}
+
+.fa-times-circle:hover {
+    color: #EB6864;
+}
+
+.deleteLinkStep {
+    width: 110px;
+    text-align: center;
+    float: right;
+    margin-top: 80px;
+}
+
+.block-name-ingredient {
+    margin-right: 0;
+}
+
+.block-name-ingredient div, .input-name-ingredient, .block-ingredients .form-control {
+    width: 250px;
+}
+
+.block-name-ingredient legend {
+    padding: 0;
+    margin-bottom: 8px;
+}
+
+.input-name-ingredient legend {
+    display: none;
+}
+
+.block-ingredients {
+    display: flex;
+    float: left;
+}
+
+.block-ingredients .form-group {
+    margin-right: 10px;
+}

@@ -1,0 +1,29 @@
+.admin-home {
+   td {
+      vertical-align: middle;
+   }
+
+   thead th {
+      border-bottom: 2px solid #b9b9b9 !important;
+      font-weight: 600;
+   }
+}
+
+.btn-delete {
+   background-color: #369;
+   border-color: #369;
+
+   &:hover {
+      background-color: #29537c;
+      border-color: #29537c;
+   }
+
+   &:focus {
+      border: 1px solid #29537c !important; 
+      box-shadow: unset !important; 
+   }
+
+   &:active {
+      background-color: #29537c !important;
+   }
+}

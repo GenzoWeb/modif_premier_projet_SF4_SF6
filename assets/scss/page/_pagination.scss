@@ -1,0 +1,25 @@
+.pagination {
+   .page-link {
+      color: $navColor !important;
+   }
+   
+   .page-link:hover {
+      z-index: 2;
+      color: #fff !important;
+      text-decoration: none;
+      background-color: $navColor;
+      border-color: $navColor;
+   }
+   
+   .active .page-link {
+      color: #fff !important;
+   }
+   
+   .disabled .page-link {
+      color: #777 !important;
+   }
+   
+   .page-link:focus {
+      box-shadow: unset !important; 
+   }
+}

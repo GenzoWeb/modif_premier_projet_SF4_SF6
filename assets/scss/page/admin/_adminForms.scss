@@ -1,0 +1,35 @@
+.link-admin {
+   color: $navColor !important;
+
+   &:hover {
+      color: #e74742 !important;
+      text-decoration: underline !important;
+   }
+}
+
+.admin-form form {
+   width: 350px;
+   margin: auto;
+   margin-bottom: 10px;
+}
+
+.table-admin {
+   th {
+      border-bottom: 2px solid #b9b9b9 !important;
+      font-weight: 600;
+   }
+
+   td {
+      vertical-align: middle;
+   }
+}
+
+.form-edit-user {
+   width: 310px;
+   margin: auto;
+
+   select {
+      appearance: auto;
+      width: 220px !important;
+   }
+}

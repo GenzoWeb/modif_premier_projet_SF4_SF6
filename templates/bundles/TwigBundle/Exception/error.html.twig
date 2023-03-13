@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page erreur{% endblock %}
+
+{% block body %}
+    <div class="container mt-4 error-page">
+        <h1 class="text-center">Cette page n'existe pas</h1>
+        <div class="text-center">
+            <p>
+                <img class="miniature-img" src="{{ asset('images/error.png') }}" alt="smiley désolé">
+            </p>
+            <p>La page demandée est introuvable : <a href = " {{ path ( 'home' ) }} "> retour à l'accueil </a> .</p>
+        </div>
+    </div>
+{% endblock %}

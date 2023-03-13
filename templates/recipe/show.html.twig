@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ recipe.name }}{% endblock %}
+
+{% block body %}
+   <div class="container mt-4 show-page">
+      <h1 class="text-center title">{{ recipe.name }}</h1>
+      <div class="container">
+         <div class="text-center">
+            {% if recipe.filename %}
+               <img class="miniature-img" src="{{ asset('images/recipes/' ~ recipe.filename) }}" > 
+            {% else %}
+               <img class="miniature-img" src="{{ asset('images/recipes/' ~ recipe.category.name | replace({'entrées': 'entrees' }) ~ '.jpg') }}" >
+            {% endif %}
+         </div>
+         <h3>Ingrédients</h3>
+         <ul class="ps-0">
+            {% for ingredient in recipe.recipeIngredients %}
+               <li>              
+                  {{ ingredient.quantity }} {{ ingredient.measured }} {{ingredient.ingredients[0].name }}
+               </li>
+            {% endfor %}
+         </ul>
+         
+         <h3 class="mt-5">Préparation</h3>
+
+         {% for step in recipe.steps %}
+            <h6 class="fw-bold mb-0">Etape {{ loop.index }} :</h6>
+            <p>{{ step.description }}</p>
+         {% endfor %}
+      </div>
+
+      <div class="container mt-5 mb-4">
+         <h4 class="fst-italic">
+            {% if recipe.comments | length == 0 %}
+               Pas encore de commentaire.
+               {% else %}
+               {{ recipe.comments | length}} commentaire{% if recipe.comments | length > 1 %}s{% endif %} :
+            {% endif %}  
+         </h4>
+
+         {% for comment in recipe.comments |reverse %}
+            <h6 class="fst-italic mb-0">{{ comment.author }} le {{ comment.createdAT | date ('d/m/Y à H:i') }} :</h6>
+            <p>{{ comment.content }}</p>
+         {% endfor %}
+
+         {% if app.user %}
+            {{ form_start(commentForm) }}
+               {{ form_row(commentForm.content, {'label': "Commentaire :", 'attr':{'placeholder': "Votre commentaire"}}) }}
+               <button type="submit" class="btn">Envoyer</button>
+            {{ form_end(commentForm)}}
+         {% else %}
+            <h5>Connectez-vous si vous voulez commenter.</h5>
+            <a href="{{ path('login')}}" class="btn">Connexion</a>
+         {% endif %}
+      </div>
+   </div>
+{% endblock %} 

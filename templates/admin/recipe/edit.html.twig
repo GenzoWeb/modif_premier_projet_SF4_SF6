@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier la recette{% endblock %}
+
+{% block body %}
+    <div class="container mt-4 admin-edit">
+        <h1 class="text-center">Modifier la recette</h1>
+
+        {{ form_start(form) }}
+            <div class="row">
+                <div class="col-md-12">{{ form_row(form.name) }}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">{{ form_row(form.category) }}</div>
+                <div class="col-md-8">{{ form_row(form.imageFile) }}</div>
+            </div>
+            <div class="col-md-12">
+                <h4 class="mb-4">Ingrédients</h4>
+                <div id="leg">
+                    {% for ingredient in form.recipeIngredients %}
+                        <div class="list-ingredients">
+                            <div>{{ form_widget(ingredient.quantity) }}</div>
+                            <div>{{ form_widget(ingredient.measured) }}</div>
+                            <div>{{ form_widget(ingredient.ingredients) }}</div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-md-10 mb-4">
+                <h4 class="mb-4">Etapes</h4>
+                {% for step in form.steps %}
+                    <div class="row mt-2">
+                        <h6 class="ps-0">Etape {{ loop.index }}</h6>
+                        <div class="step col-md-11">{{ form_widget(step.description) }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="text-center mb-4">
+                <button class="btn">Editer</button>
+            </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

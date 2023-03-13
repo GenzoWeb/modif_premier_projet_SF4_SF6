@@ -1,0 +1,17 @@
+@import '../css/reset.css';
+@import "~bootstrap/scss/bootstrap";
+
+@import 'base/settings';
+@import 'base/navbar';
+
+@import 'page/home';
+@import 'page/listRecipes';
+@import 'page/pagination';
+@import 'page/searchRecipes';
+
+@import 'page/admin/adminHome';
+@import 'page/admin/new';
+@import 'page/admin/editRecipe';
+@import 'page/admin/adminForms';
+
+@import 'responsive/resp';

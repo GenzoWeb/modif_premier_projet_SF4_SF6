@@ -1,0 +1,18 @@
+{{ form_start(form) }}
+    <div id="search-recipe">
+        <div class="form-row">
+            <div class="col">
+                {{ form_row(form.nameRecipe) }}
+            </div>
+            <div class="col">
+                {{ form_row(form.ingredient) }}
+            </div>
+            <div class="col">
+                {{ form_row(form.nameCategory) }}
+            </div>            
+            <div class="button-search">
+                <button class="btn">Rechercher</button>
+            </div>  
+        </div>   
+    </div>       
+{{ form_end(form) }}

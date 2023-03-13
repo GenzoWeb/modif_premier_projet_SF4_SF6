@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter une recette{% endblock %}
+
+{% block body %}
+    <div class="container mt-4 mb-4 add-admin">
+        <h1 class="text-center">Ajouter une recette</h1>
+        {{ form_start(form) }}
+            <div class="row">
+                <div class="col-md-12">{{ form_row(form.name) }}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-4">{{ form_row(form.category) }}</div>
+                        <div class="col-md-5">{{ form_row(form.imageFile) }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="admin-block-add">
+                <div class="admin-add-title">
+                    <p class="title-adding-recipe">Ingrédients :</p>
+                    <a href="#" id="add_ingredient" class="btn">Ajouter un ingrédient</a>
+                </div>
+                <div>{{ form_widget(form.recipeIngredients) }}</div> 
+            </div>
+            <div class="admin-block-add admin-step">
+                <div class="admin-add-title">
+                    <p class="title-adding-recipe">ETAPES :</p>
+                    <a href="#" id="add_step" class="btn">Ajouter une étape</a>
+                </div>
+                <div>{{ form_widget(form.steps) }}</div>
+            </div>
+            <div class="btn-add-recipe">
+                <button class="btn">Ajouter la recette</button>
+            </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

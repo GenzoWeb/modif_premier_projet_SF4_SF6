@@ -1,0 +1,42 @@
+.admin-edit .row {
+   margin-left: 0px !important;
+}
+
+.admin-edit {
+   h6 {
+      width: auto;
+   }
+}
+
+.step textarea {
+   min-height: 120px;
+}
+
+#leg div {
+   margin-right: 10px;
+}
+
+#leg legend {
+   display: none;
+}
+
+.add-admin {
+   min-height: calc(100vh - 187px); 
+}
+
+.list-ingredients div {
+   width: 208px;
+}
+
+.list-ingredients {
+   display: flex;
+}
+
+/* BOUTON PARCOURIR (ADMIN IMAGE) */
+.custom-file-label::after {
+   display: none !important;
+}
+
+.custom-file-input {
+   opacity: inherit !important;
+}
